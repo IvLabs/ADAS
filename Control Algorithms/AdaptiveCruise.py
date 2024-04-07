@@ -1,61 +1,60 @@
 import matplotlib.pyplot as plt
-import numpy as np
+
+dmax = 5
+kp = 100
+ki = 0.4
+kd = 1000
+b = 0.6
+m = 1000
+
+vel = 2
+a = 0
+s = 100
+
+e = s - dmax
+i = 0
+d = 0
 
 
+e1 = s - dmax
+earr = []
+sarr = []
+varr = []
 
-M = 1100  
-drag_coefficient = 0.5  
-setpoint_vel = 20
+while abs(e) > 0.1 or abs(e1) > 0.1:
+    e = s - dmax
+    i += e
+    d = e - e1
 
-dt =1  
-t_max = 90 # in sec
+    u = kp * e + kd * d + ki * i
 
-# Initializing variables 
-time = np.arange(0, t_max, dt)
-vel = np.zeros(len(time))
-acceleration = np.zeros(len(time))
-
-Kp = 320
-Ki = 0.6
-Kd = 0.8
-# PID controller param(tuning)
-
-error = np.zeros(len(time))   #at each time
-
-integral_e = 0
-derivative_e=0
-
-# Looping for dt
-for i in range(1, len(time)):
-    error[i] = setpoint_vel - vel[i-1]
-    
-    integral_e += error[i] * dt
-    derivative_e += (error[i] - error[i-1]) / dt
-
-    engineforce  = Kp * error[i] + Ki * integral_e + Kd * derivative_e
-    
-    acceleration[i] =(engineforce /M) - ((drag_coefficient * vel[i-1]) /M)
-  
-
-    vel[i] = vel[i-1] + acceleration[i] * dt    # Updating velocity
-
-rise_time = 0
-for i in range(len(time)):
-    if vel[i] >= 0.9 * setpoint_vel:
-        rise_time = time[i]
+    if e > 100 or e < -100:
         break
 
-overshoot = ((max(vel) - setpoint_vel) / setpoint_vel) * 100
+    e1 = e
+    print("Errore >>", e)
+    print("Errord >>", d)
+    print("Errori >>", i)
 
-print(f"Rise time: {rise_time:}")
-print(f"Overshoot: {overshoot:.2f} %")
+    a = (u - b * vel) / m
+    s -= vel + (a / 2)
+    vel = vel + a
+    print("Vel >>", vel)
+    print("acc >>", a)
+    print("dis >>", s)
+    earr.append(e)
+    sarr.append(s)
+    varr.append(vel)
 
+plt.plot(range(len(sarr)), sarr)
+plt.plot(range(len(varr)), varr)
 
-plt.plot(time, vel)
-plt.plot(time, setpoint_vel * np.ones(len(time)), label="Set Point vel")
-plt.xlabel("Time(s)")
-plt.ylabel("velocity(m/s)")
-plt.legend()
+plt.xlabel("Time")
+plt.ylabel("Distance")
+plt.show()
+plt.plot(range(len(varr)),vel)
+plt.xlabel("Time")
+plt.ylabel("velovity")
 plt.show()
 
 
