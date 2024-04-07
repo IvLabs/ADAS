@@ -1,7 +1,5 @@
 # ADAS
 
-
-
 # Project ADAS: Advanced Driving Assistance System_🚗_______
 
 # Description
@@ -212,13 +210,20 @@ ego.set_autopilot(True)
 
 ### cruise controller output
 
+
 https://github.com/IvLabs/ADAS/assets/119414628/d79c35f3-3a7e-492a-940b-980d75e76154
  
 ### Adaptive cruise controller output
-//video
+
+
+https://github.com/IvLabs/ADAS/assets/119414628/f34b9a76-f4ad-4af1-a53f-06b5f02ef83a
 
 ### Pure Persuit output
-//video
+
+
+
+https://github.com/IvLabs/ADAS/assets/119414628/a42fede6-9653-486d-846d-d138ea49f1a9
+
 
 
 # Route Planning & Mapping Layer
