@@ -1,6 +1,4 @@
-# ADAS
-
-# Project ADAS: Advanced Driving Assistance System_🚗_______
+# ADAS: Advanced Driving Assistance System_🚗_______
 
 # Description
 
@@ -19,8 +17,6 @@ Level 2 – Partial Driving Automation [Lane Following]
 The ADAS system follows a modular architecture, with each layer communicating through well-defined interfaces. The high-level architecture is depicted in the following diagram:
 
 
-![image](https://hackmd.io/_uploads/BkHRKlQy0.png)
-
 # 1 . Controls Layer
 
 The Controls layer is responsible for the linear and lateral movement of the vehicle.
@@ -28,7 +24,6 @@ The Controls layer is responsible for the linear and lateral movement of the veh
 ### Cruise Control and Adaptive Cruise Control
 
 We have implemented a cruise control and adaptive cruise control system using a PID (Proportional-Integral-Derivative) controller for linear control. The PID controller adjusts the vehicle's speed based on the desired speed and the distance to the vehicle in front.
-![73611832-b9cd6480-45ee-11ea-8b15-58c1068bf7ed](https://hackmd.io/_uploads/H14iekxgC.png)
 
 ```python
 # PID Controller for Linear Control
@@ -44,7 +39,6 @@ def pid_control(target_speed, current_speed, dt):
     previous_error = error
     return control_output
 ```
-![image](https://hackmd.io/_uploads/ryx7mZmkC.png)
 
 #### Results for Cruise Control
 >* Setting the car to maintain a constant speed without any human efforts.
@@ -226,91 +220,6 @@ https://github.com/IvLabs/ADAS/assets/119414628/a42fede6-9653-486d-846d-d138ea49
 
 
 
-# Route Planning & Mapping Layer
-
-The Route Planning & Mapping layer functions similar to Google Maps, providing a route for the vehicle to follow. It calculates the optimal path based on the start and destination locations, considering factors such as traffic conditions and road constraints.
-
-## Perception Layer
-
-The Perception layer is responsible for processing data from various sensors (e.g., cameras, LiDAR, radar) to enable advanced features like sudden obstacle avoidance, lane assist, and parking assist. This layer is crucial for accurately perceiving the vehicle's environment and responding appropriately.
-
-### Obstacle Detection and Avoidance
-
-We are currently working on implementing algorithms for detecting and avoiding sudden obstacles on the road. This involves processing sensor data to identify potential hazards and adjusting the vehicle's trajectory accordingly.
-
-### Lane Assist
-
-The lane assist feature utilizes computer vision techniques to detect lane markings on the road. It can provide warnings or take corrective actions to keep the vehicle within the designated lane.
-
-### Parking Assist
-
-The parking assist feature aims to assist drivers during parallel and perpendicular parking maneuvers. It analyzes the available space and provides guidance for steering and throttle inputs to execute the parking maneuver smoothly.
-
-## Simulation and Visualization
-
-To showcase the system's capabilities, we have recorded various simulation scenarios and created GIFs for visual representation. These simulations demonstrate the performance of our algorithms in different driving conditions.
-
-![Simulation GIF](path/to/simulation.gif)
-
-## Hardware Integration
-
-While the initial development and testing were done in simulation, we plan to integrate the ADAS system with a 4-wheel drive chassis for real-world testing and deployment. The hardware integration process involves the following steps:
-
-1. **Sensor Integration**: We will mount various sensors, such as cameras, LiDAR, and radar, on the vehicle chassis. These sensors will provide the necessary data for the Perception layer.
-
-2. **Control Unit Integration**: The control unit, which runs the ADAS software, will be integrated with the vehicle's actuators (e.g., throttle, brakes, steering) to enable autonomous control.
-
-3. **Calibration and Testing**: Once the hardware components are integrated, we will perform extensive calibration and testing procedures to ensure the system functions accurately and reliably in real-world conditions.
-
-## Challenges and Future Work
-
-While we have made significant progress in developing the ADAS system, there are still several challenges and areas for future work:
-
-1. **Improving Perception Accuracy**: Enhancing the accuracy and robustness of the Perception layer is crucial for ensuring safe and reliable autonomous driving. We plan to explore advanced computer vision and machine learning techniques to improve object detection, classification, and tracking.
-
-2. **Handling Complex Scenarios**: Current algorithms may struggle with intricate driving scenarios, such as construction zones, unpredictable pedestrian behavior, or adverse weather conditions. We aim to develop more sophisticated decision-making and planning algorithms to handle these complex situations.
-
-3. **Verification and Validation**: Ensuring the safety and reliability of the ADAS system is of utmost importance. We will implement rigorous verification and validation processes, including extensive testing in simulated and real-world environments, to identify and mitigate potential risks.
-
-4. **Scalability and Efficiency**: As the ADAS system becomes more complex, we need to optimize its performance and ensure scalability. This may involve exploring more efficient algorithms, parallel computing techniques, and optimized hardware configurations.
-
-6. **Ethical Considerations**: Autonomous driving systems raise ethical concerns, such as decision-making in dilemma situations and accountability. We will work closely with experts in ethics and policymakers to address these issues and ensure the responsible development and deployment of our ADAS system.
-
-## Collaborators
-
-This project is a collaborative effort involving researchers and engineers from various disciplines. We would like to acknowledge the contributions of the following individuals and organizations:
-
->Mayank Lonkar ~***mentor***
-Gautam Ranka, ***member***
-Presmansu Pardhan, ***member*** 
-Sunil Watgule, ***member***
-Akhilesh Navalkar, ***member***
-Shreyas Kothawale, ***member*** 
-Ayush Naphade, ***member***
-
-
-## Getting Started
-
-To run the ADAS system locally, follow these steps:
-
-1. Clone the repository: `git clone https://github.com/adas-repo.git`
-2. Install the required dependencies: `pip install -r requirements.txt`
-3. Run the main script: `python main.py`
 
 
 
-## Contributing
-
-Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](link/to/license).
-
-## Contact 
-
-If you have any questions, suggestions, or would like to collaborate on this project, please feel free to reach out:
-
-- Email: [your-email@example.com]
-- Website: [https://your-website.com]
-- Twitter: [@your-twitter-handle]
