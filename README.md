@@ -48,7 +48,7 @@ def pid_control(target_speed, current_speed, dt):
 Error v/s Time            |  Velocity v/s Time 
 :-------------------------:|:-------------------------:
 ![image](https://hackmd.io/_uploads/r1gwoyXk0.png)  |  ![image](https://hackmd.io/_uploads/Hyv4hkQyC.png)
-![73613341-3e26e400-45fd-11ea-8985-d059e340796e](https://hackmd.io/_uploads/rJCRHkleR.png)
+
 
 
 #### Results for Adaptive Cruise Control
