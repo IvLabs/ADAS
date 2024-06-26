@@ -125,7 +125,7 @@ https://github.com/IvLabs/ADAS/assets/119414628/d79c35f3-3a7e-492a-940b-980d75e7
 
 https://github.com/IvLabs/ADAS/assets/119414628/f34b9a76-f4ad-4af1-a53f-06b5f02ef83a
 
-### Pure Persuit output
+### Pure Pursuit output
 
 
 
