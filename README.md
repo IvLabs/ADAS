@@ -1,4 +1,4 @@
-# ADAS: Advanced Driving Assistance System_🚗_______
+# ADAS: Advanced Driving Assistance System
 
 # Description
 
