@@ -132,7 +132,25 @@ https://github.com/IvLabs/ADAS/assets/119414628/f34b9a76-f4ad-4af1-a53f-06b5f02e
 https://github.com/IvLabs/ADAS/assets/119414628/a42fede6-9653-486d-846d-d138ea49f1a9
 
 
+# Path Planning
+## Overview:
 
+Path planning is a fundamental problem in robotics and autonomous systems, involving the determination of a route or path from a start point to a destination while avoiding obstacles and minimizing cost.
+It is widely used in various applications including robotics, autonomous vehicles, logistics, and gaming.
+>* The objective is to:
+   1. Ensure the robot or vehicle can navigate safely from the start to the goal.
+   2. Avoid obstacles and dynamic changes in the environment.
+   3. Ensure the vehicle avoids collisions with static and dynamic obstacles.
+   4. Optimize the route for the shortest travel time or distance.
+   5. Adhere to traffic laws and regulations.
+   6. Provide smooth and comfortable routes for passengers.
 
+### Implementation:
 
+ 1. Environment Representation: The road network is represented as a graph, where nodes denote intersections and edges represent road segments.
+ 2. Collision Detection: Algorithms ensure the planned path avoids collisions using techniques like bounding boxes or voxel grids.
+ 3. Cost Function: Factors in travel time, distance, fuel efficiency, and comfort to determine the optimal path.
 
+#### Result
+ 
+![dijkstra](https://github.com/IvLabs/ADAS/assets/119414628/37575e7e-e79f-4c33-ba02-02dd61ddd38d)
